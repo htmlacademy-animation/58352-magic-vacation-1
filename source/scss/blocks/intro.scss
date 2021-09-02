@@ -86,17 +86,6 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
 .intro__message {
   flex: none;
   width: 50.9rem;

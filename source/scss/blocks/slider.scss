@@ -13,6 +13,12 @@
   }
 }
 
+.swiper-slide-active, .swiper-slide-next {
+  .slider__item-text {
+    animation: fadeIn 2s;
+  }
+}
+
 .slider__item {
   display: flex;
   flex-direction: column;
