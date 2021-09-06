@@ -11,11 +11,18 @@
       min-height: calc(var(--vh, 1vh) * 100);
     }
   }
+  @media (min-width: $mobile) {
+  .swiper-slide-next {
+      .slider__item-text {
+        animation: fadeIn 1s, shiftUp 1s;
+      }
+    }
+  }
 }
 
-.swiper-slide-active, .swiper-slide-next {
+.swiper-slide-active {
   .slider__item-text {
-    animation: fadeIn 2s, shiftUp 2s;
+    animation: fadeIn 1s, shiftUp 1s;
   }
 }
 

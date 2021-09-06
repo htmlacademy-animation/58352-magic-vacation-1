@@ -278,6 +278,9 @@
     &:focus {
       color: $c-purple;
       outline: none;
+      &::after {
+        width: 100%;
+      }
 
       &::after {
         opacity: 1;

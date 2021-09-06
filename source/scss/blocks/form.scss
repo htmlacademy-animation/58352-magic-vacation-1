@@ -29,6 +29,7 @@
   }
 }
 
+
 .form__field {
   flex: none;
   margin-right: 3rem;
@@ -43,7 +44,6 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
-  animation: fadeIn 2s, shiftRight 2s;
 
   &:focus {
     border: 1px solid $c-purple;
