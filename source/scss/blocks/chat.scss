@@ -183,6 +183,19 @@
   }
 }
 
+@keyframes widthUp {
+  from {
+    width: 0;
+  }
+}
+
 .chat__footer {
   margin-top: auto;
+  input {
+    right: 100%;
+    animation: widthUp 1s;
+  }
+  .pseudo-input {
+    width: 100%;
+  }
 }
