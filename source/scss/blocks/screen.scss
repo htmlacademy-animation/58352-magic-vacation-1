@@ -38,6 +38,22 @@
   z-index: 1;
 }
 
+@keyframes showFooter {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.loaded {
+  .screen__footer {
+    display: block;
+    animation: showFooter 1s linear;
+  }
+}
+
 .screen__footer {
   position: absolute;
   bottom: 0;
@@ -46,6 +62,7 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  display: none;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
