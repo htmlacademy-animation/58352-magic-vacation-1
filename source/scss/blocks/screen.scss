@@ -50,7 +50,7 @@
 .loaded {
   .screen__footer {
     display: block;
-    animation: showFooter 1s linear;
+    animation: showFooter 0.7s cubic-bezier(0.2, 1, 0.8, 0.9);
   }
 }
 

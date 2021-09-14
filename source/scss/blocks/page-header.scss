@@ -7,13 +7,27 @@
   }
 }
 
+@keyframes showLinkUnderline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%
+  }
+}
+
 .loaded {
   .page-header {
     display: block;
-    animation: showHeader 1s linear;
+    animation: showHeader 1s cubic-bezier(0.2, 1, 0.8, 0.9);
   }
   .page-header__logo {
-    animation: shiftLeft 1s;
+    animation: shiftLeft 1s cubic-bezier(0.2, 1, 0.8, 0.9);;
+  }
+  .page-header__menu {
+    a.active:after {
+      animation: showLinkUnderline 1s cubic-bezier(0.2, 1, 0.8, 0.9);
+    }
   }
 }
 
