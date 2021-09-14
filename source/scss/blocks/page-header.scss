@@ -12,6 +12,9 @@
     display: block;
     animation: showHeader 1s linear;
   }
+  .page-header__logo {
+    animation: shiftLeft 1s;
+  }
 }
 
 .page-header {
