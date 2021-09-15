@@ -12,6 +12,18 @@ export default class FullPageScroll {
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
+    this.histo = [];
+  }
+
+  showAnimatedBackground() {
+    const screenToAnimate = document.querySelector(`.transition__screen`);
+    if (this.activeScreen === 2 && this.histo[this.histo.length - 2] === 'story') {
+      screenToAnimate.classList.add(`go`);
+      setTimeout(() => screenToAnimate.style.opacity = `0`, 350);
+    } else {
+      screenToAnimate.classList.remove(`go`);
+      screenToAnimate.style.opacity = `1`;
+    }
   }
 
   init() {
@@ -20,6 +32,7 @@ export default class FullPageScroll {
 
     this.onUrlHashChanged();
   }
+
 
   onScroll(evt) {
     if (this.scrollFlag) {
@@ -41,8 +54,17 @@ export default class FullPageScroll {
 
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
+    this.histo.push(location.hash.slice(1));
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
-    this.changePageDisplay();
+    if (this.activeScreen === 2 && this.histo[this.histo.length - 2] === 'story') {
+      this.showAnimatedBackground();
+      setTimeout(() => {
+        this.changePageDisplay();
+      }, 250);
+    } else {
+      this.showAnimatedBackground();
+      this.changePageDisplay();
+    }
   }
 
   changePageDisplay() {
@@ -75,10 +97,9 @@ export default class FullPageScroll {
       detail: {
         'screenId': this.activeScreen,
         'screenName': this.screenElements[this.activeScreen].id,
-        'screenElement': this.screenElements[this.activeScreen]
+        'screenElement': this.screenElements[this.activeScreen],
       }
     });
-
     document.body.dispatchEvent(event);
   }
 
