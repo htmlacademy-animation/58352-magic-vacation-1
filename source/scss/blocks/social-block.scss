@@ -12,6 +12,21 @@
   }
 }
 
+@keyframes scaleUp {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.loaded {
+  .social-block__toggler:before {
+    animation: scaleUp 1s cubic-bezier(0.2, 1, 0.8, 0.9);
+  }
+}
+
 .social-block__toggler {
   @include btn-reset;
   position: relative;
