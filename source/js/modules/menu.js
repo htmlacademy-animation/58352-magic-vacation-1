@@ -4,7 +4,7 @@ export default () => {
   let menuLinks = document.querySelectorAll(`.js-menu-link`);
 
   if (menuToggler) {
-    menuToggler.addEventListener(`click`, function () {
+    menuToggler.addEventListener(`click`, function (e) {
       if (header.classList.contains(`page-header--menu-opened`)) {
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
@@ -16,7 +16,7 @@ export default () => {
   }
 
   for (let i = 0; i < menuLinks.length; i++) {
-    menuLinks[i].addEventListener(`click`, function () {
+    menuLinks[i].addEventListener(`click`, function (e) {
       if (window.innerWidth < 1025) {
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
